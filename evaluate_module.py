@@ -53,16 +53,13 @@ def create_class_report(y_test_argmax, y_pred):
     labels=['Basking', 'Blue', 'Hammerhead', 'Mako', 'Sand Tiger', 'Tiger', 'White', 'Blacktip', 'Bull', 'Lemon', 'Nurse', 'Thresher', 'Whale', 'Whitetip']
     report = classification_report(y_test_argmax, y_pred, target_names=labels, output_dict=True)
 
-    # print(report)
-
-    #Convert the report to a pandas DataFrame
+    #Convert the report to a pandas DataFrame and move model accuracy to bottom of df
     accuracy = round(report['accuracy'],4)
     del report['accuracy']
     df = pd.DataFrame(report).transpose()
-    # df = df.drop(columns=['accuracy'])
     df = df.sort_values(by='precision', ascending=False)
     df.reset_index(inplace=True)
-    print(f"Scoring Metrics By Class \n {df} \n Model Accuracy: {round(accuracy,2)*100} % \n")
+    print(f"Scoring Metrics By Class \n {df} \n Model Accuracy: {round(accuracy,2)*100}")
 
 #TDL STILL TO DO PRELUNCH:
 #ADD CONFUSION MATRIX
