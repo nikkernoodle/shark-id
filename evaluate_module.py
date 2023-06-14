@@ -62,7 +62,7 @@ def create_class_report(y_test_argmax, y_pred):
     df = pd.DataFrame(report).transpose()
     df = df.sort_values(by='precision', ascending=False)
     df.reset_index(inplace=True)
-    print(f"Scoring Metrics By Class \n {df} \n Model Accuracy: {round(accuracy,2)*100}")
+    print(f"Scoring Metrics By Class \n {df} \n Model Accuracy: {round(accuracy, 4)*100}%")
 
 def create_confusion_matrix(y_test_argmax, y_pred):
     cm = confusion_matrix(y_test_argmax, y_pred)
