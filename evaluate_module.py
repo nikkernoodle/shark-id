@@ -50,14 +50,19 @@ def model_scoring_metrics(y_test_argmax, y_pred):
 def create_class_report(y_test_argmax, y_pred):
 
     #classification report - to tidy later
-    labels=['basking', 'blue', 'hammerhead', 'mako', 'sand tiger', 'tiger', 'white', 'blacktip', 'bull', 'lemon', 'nurse', 'thresher', 'whale', 'whitetip']
+    labels=['Basking', 'Blue', 'Hammerhead', 'Mako', 'Sand Tiger', 'Tiger', 'White', 'Blacktip', 'Bull', 'Lemon', 'Nurse', 'Thresher', 'Whale', 'Whitetip']
     report = classification_report(y_test_argmax, y_pred, target_names=labels, output_dict=True)
 
-    # Convert the report to a pandas DataFrame
+    # print(report)
+
+    #Convert the report to a pandas DataFrame
+    accuracy = round(report['accuracy'],4)
+    del report['accuracy']
     df = pd.DataFrame(report).transpose()
+    # df = df.drop(columns=['accuracy'])
     df = df.sort_values(by='precision', ascending=False)
     df.reset_index(inplace=True)
-    print(f"Scoring Metrics By Class \n {df}")
+    print(f"Scoring Metrics By Class \n {df} \n Model Accuracy: {round(accuracy,2)*100} % \n")
 
 #TDL STILL TO DO PRELUNCH:
 #ADD CONFUSION MATRIX
@@ -585,7 +590,7 @@ y_test_argmax = [6,
  5,
  7]
 
-model_scoring_metrics(y_test_argmax, y_pred)
+# model_scoring_metrics(y_test_argmax, y_pred)
 
 create_class_report(y_test_argmax, y_pred)
 
