@@ -1,7 +1,11 @@
 import numpy as np #.argmax
 import pandas as pd
 from sklearn.metrics import f1_score, precision_score, accuracy_score, recall_score, balanced_accuracy_score, classification_report
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
+import matplotlib.pyplot as plt
 
+#labels for dataframe, classification report and confusion matrix
+labels=['Basking', 'Blue', 'Hammerhead', 'Mako', 'Sand Tiger', 'Tiger', 'White', 'Blacktip', 'Bull', 'Lemon', 'Nurse', 'Thresher', 'Whale', 'Whitetip']
 
 def create_predictions(model, X_test, y_test):
     #create y_pred predictions and y_text_argmax for metrics
@@ -50,7 +54,6 @@ def model_scoring_metrics(y_test_argmax, y_pred):
 def create_class_report(y_test_argmax, y_pred):
 
     #classification report - to tidy later
-    labels=['Basking', 'Blue', 'Hammerhead', 'Mako', 'Sand Tiger', 'Tiger', 'White', 'Blacktip', 'Bull', 'Lemon', 'Nurse', 'Thresher', 'Whale', 'Whitetip']
     report = classification_report(y_test_argmax, y_pred, target_names=labels, output_dict=True)
 
     #Convert the report to a pandas DataFrame and move model accuracy to bottom of df
@@ -61,9 +64,19 @@ def create_class_report(y_test_argmax, y_pred):
     df.reset_index(inplace=True)
     print(f"Scoring Metrics By Class \n {df} \n Model Accuracy: {round(accuracy,2)*100}")
 
+def create_confusion_matrix(y_test_argmax, y_pred):
+    cm = confusion_matrix(y_test_argmax, y_pred)
+
+    disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=labels)
+
+    fig, ax = plt.subplots(figsize=(10,10))
+    disp.plot(ax=ax)
+    ax.set_xticklabels(labels, rotation=45)
+
+    plt.show()
+
 #TDL STILL TO DO PRELUNCH:
 #ADD CONFUSION MATRIX
-#ADD CLASSIFICATION REPORT AND MAKE IT LOOK PRETTY
 
 #BELOW HERE ARE Y_PRED AND Y_TEST_ARGMAX FOR TEXTING, CODE TO TEST FUNCTION IS AT THE BOTTOM
 
@@ -591,5 +604,6 @@ y_test_argmax = [6,
 
 create_class_report(y_test_argmax, y_pred)
 
+create_confusion_matrix(y_test_argmax, y_pred)
 
 #I AM CHANGING SOME STUFf
