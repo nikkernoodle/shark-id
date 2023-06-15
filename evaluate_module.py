@@ -51,18 +51,23 @@ def model_scoring_metrics(y_test_argmax, y_pred):
 
     print(f"Model Scoring Metrics: \n F1 score: {round(f1,4)} \n Weighted F1 score: {round(f1_score_weighted,4)} \n Precision: {round(precision,4)} \n Weighted precision: {round(precision_score_weighted,4)} \n Recall: {round(recall,4)} \n Weighted recall: {round(recall_weighted,4)} \n Accuracy: {round(accuracy,4)} \n Weighted accuracy: {round(accuracy_bal,4)}")
 
-def create_class_report(y_test_argmax, y_pred):
+def create_class_reports(y_test_argmax, y_pred):
 
-    #classification report - to tidy later
+    #classification report - separate accuracy, average and weighted average separate
     report = classification_report(y_test_argmax, y_pred, target_names=labels, output_dict=True)
 
+    print(f"Scoring Metrics (Unsorted) \n {report}")
+
+    #classification report - sorted by f1 score
+    report_sorted_f1 = classification_report(y_test_argmax, y_pred, target_names=labels, output_dict=True)
+
     #Convert the report to a pandas DataFrame and move model accuracy to bottom of df
-    accuracy = round(report['accuracy'],4)
-    del report['accuracy']
-    df = pd.DataFrame(report).transpose()
-    df = df.sort_values(by='precision', ascending=False)
+    accuracy = round(report_sorted_f1['accuracy'],4)
+    del report_sorted_f1['accuracy']
+    df = pd.DataFrame(report_sorted_f1).transpose()
+    df = df.sort_values(by='f1-score', ascending=False)
     df.reset_index(inplace=True)
-    print(f"Scoring Metrics By Class \n {df} \n Model Accuracy: {round(accuracy, 4)*100}%")
+    print(f"Scoring Metrics Sorted by F1 Score \n {df} \n Model Accuracy: {round(accuracy, 4)*100}%")
 
 def create_confusion_matrix(y_test_argmax, y_pred):
     cm = confusion_matrix(y_test_argmax, y_pred)
