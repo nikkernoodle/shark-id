@@ -1,6 +1,6 @@
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
-def augment(X, y, preprocessor=None, batch=16):
+def augment(X, y=None, preprocessor=None, batch=16):
     '''
     Function to return augmented data
     '''
@@ -20,6 +20,9 @@ def augment(X, y, preprocessor=None, batch=16):
     datagen.fit(X)
 
     # produces the flow training set
-    flow = datagen.flow(X, y, batch_size=batch)
+    if y:
+        flow = datagen.flow(X, y, batch_size=batch)
+    else:
+        flow = datagen.flow(X, batch_size=batch)
 
     return flow
