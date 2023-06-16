@@ -6,8 +6,8 @@ import streamlit as st
 import tensorflow as tf
 from PIL import Image
 from shark_id.predict import predict_image
-from shark_id.predict import load_model
-
+from io import BytesIO
+import numpy as np
 
 ## Streamlit app
 #st.title("Shark-ID")
@@ -16,18 +16,19 @@ from shark_id.predict import load_model
 # Shark-ID front
 
 image = st.file_uploader('Upload an Image')
-image = Image.open(image)
-print(type(image))
+if image is not None:
+    image = Image.open(image)
+    image_array= np.array(image) # if you want to pass it to OpenCV
+    st.image(image_array, caption="The caption", use_column_width=True)
+
+
 
 prediction = predict_image(image)
-print(prediction)
-
 
 # model
 #load_model takes model_path as an argument
 #we need to be able to give the model path as an argument
 #to predict the image we need to then create something else using predict_image
-load_model.(image))
 
 
 # Make the prediction
