@@ -1,0 +1,37 @@
+.gitignore
+README.md
+dev_notes.md
+requirements.txt
+setup.py
+notebooks/Efficientnet_baseline.ipynb
+notebooks/Efficientnet_enhanced_model.ipynb
+notebooks/Efficientnet_enhanced_model_augment.ipynb
+notebooks/Efficientnet_enhanced_model_v2.ipynb
+notebooks/Efficientnet_enhanced_model_v3_augmentation, on sharks_tar.ipynb
+notebooks/Efficientnet_enhanced_model_v3_augmentation.ipynb
+notebooks/Inceptionv3_baseline_model_with_dense_layers_and_dropout_layers.ipynb
+notebooks/Sharks_cleaning_data.ipynb
+notebooks/Sharks_cleaning_data_SC (1).ipynb:Zone.Identifier
+notebooks/Sharks_cleaning_data_SC.ipynb
+notebooks/Sharks_cleaning_data_SC.ipynb:Zone.Identifier
+notebooks/augmentation.ipynb
+notebooks/base_model_preprocess.ipynb
+notebooks/base_model_preprocess_old.ipynb
+notebooks/base_model_sketch.ipynb
+notebooks/resnet50_baseline_model_with_dense_layers_and_dropout_layers.ipynb
+notebooks/Old/Sharks_cleaning_data_SC.ipynb
+notebooks/Old/cleaning_data_SC.ipynb
+shark_id/__init__.py
+shark_id/augment.py
+shark_id/dataloader.py
+shark_id/evaluate_module.py
+shark_id/predict.py
+shark_id/preprocessing.py
+shark_id.egg-info/PKG-INFO
+shark_id.egg-info/SOURCES.txt
+shark_id.egg-info/dependency_links.txt
+shark_id.egg-info/not-zip-safe
+shark_id.egg-info/top_level.txt
+shark_id/api/__init__.py
+shark_id/api/fast.py
+tests/aug_test.py

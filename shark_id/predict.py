@@ -17,10 +17,12 @@ def preprocess_image(image):
     return image
 
 
+
+
 # funktion which loads the model
 # gave back a model variable
 
-def load_model(model_path):
+def load_model(model_path = 'raw_data/model/model.h5'):
     model = tf.keras.models.load_model(model_path)
     return model
 
@@ -34,4 +36,15 @@ def predict_image(image):
     loaded_model = load_model(model_path)
     img = tf.expand_dims(preprocessed_img, axis=0)
     preds = loaded_model.predict(img)
+    return preds
+
+
+def predict_image_model(image, model):
+    preprocessed_img = preprocess_image(image)
+    img = tf.expand_dims(preprocessed_img, axis=0)
+    preds = model.predict(img)
+    #dict_result = {}
+    ## Iterate over the array and add elements to the dictionary
+    #for i, value in enumerate(preds):
+    #    dict_result[i] = value
     return preds
