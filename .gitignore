@@ -1,2 +1,4 @@
-
 raw_data/*
+.ipynb_checkpoints/
+notebooks/*:Zone.Identifier
+*:Zone.Identifier
