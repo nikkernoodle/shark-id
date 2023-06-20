@@ -1,6 +1,3 @@
-#User -> input picture
-#Picture→ preprocessed
-#	→ run through model
 
 import streamlit as st
 from PIL import Image
