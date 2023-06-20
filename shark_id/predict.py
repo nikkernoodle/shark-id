@@ -17,8 +17,6 @@ def preprocess_image(image):
     return image
 
 
-
-
 # funktion which loads the model
 # gave back a model variable
 
