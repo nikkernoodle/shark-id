@@ -19,17 +19,6 @@ app.add_middleware(
 # preload the model
 app.state.model = load_model()
 
-
-
-# predicts from url provided by user
-#@app.get('/predict_url')
-#def prediction(url_with_pic, model_type=''):
-#    model = app.state.model
-#    assert model is not None
-#    prediction = predict.predict_labels(model, model_type, url_with_pic=url_with_pic)
-#    return prediction
-
-
 # predicts from file provided by user
 @app.post('/predict_file')
 def prediction(file: UploadFile):
