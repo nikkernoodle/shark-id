@@ -30,6 +30,26 @@ def load_model(model_path = 'raw_data/model/model.h5'):
 # funktion for prediction with both funktion together (the preprocessed image funktion, model funktion)
 #give back the prediction
 
+# def predict_image(image):
+#     model_path = 'raw_data/model/model.h5'
+#     preprocessed_img = preprocess_image(image)
+#     loaded_model = load_model(model_path)
+#     img = tf.expand_dims(preprocessed_img, axis=0)
+#     preds = loaded_model.predict(img)
+#     return preds
+
+
+# def predict_image_model(image, model):
+#     preprocessed_img = preprocess_image(image)
+#     img = tf.expand_dims(preprocessed_img, axis=0)
+#     preds = model.predict(img)
+#     #dict_result = {}
+#     ## Iterate over the array and add elements to the dictionary
+#     #for i, value in enumerate(preds):
+#     #    dict_result[i] = value
+#     return preds
+
+
 def predict_image(image):
     model_path = 'raw_data/model/model.h5'
     preprocessed_img = preprocess_image(image)
@@ -43,8 +63,4 @@ def predict_image_model(image, model):
     preprocessed_img = preprocess_image(image)
     img = tf.expand_dims(preprocessed_img, axis=0)
     preds = model.predict(img)
-    #dict_result = {}
-    ## Iterate over the array and add elements to the dictionary
-    #for i, value in enumerate(preds):
-    #    dict_result[i] = value
     return preds
