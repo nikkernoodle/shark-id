@@ -10,7 +10,9 @@ import requests
 #st.text("Upload an image to predict the shark species.")
 
 #now lokal, later we will put it to google cloud
-url = 'http://0.0.0.0:8501'
+
+url = 'https://shark-api-o7bru5oetq-ew.a.run.app'
+
 
 # Shark-ID front
 
