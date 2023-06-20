@@ -51,10 +51,12 @@ if st.button('Predict'):
 
         if res.status_code == 200:
             # Display the prediction returned by the API
-            preds = [f'{round(_*100, 2)}%' for _ in res.json()]
-            prediction = pd.DataFrame(preds, columns=['Probability'], index=classes)
-            prediction.index.name = 'Shark Variety'
-            st.dataframe(prediction.sort_values(by='Probability', ascending=False).iloc[0:3])
+            prediction = pd.DataFrame(res.json(), columns=['Probability'], index=classes)
+            # prediction.index.name = 'Shark Variety'
+            prediction.sort_values(by='Probability', ascending=False, inplace=True)
+            output = [f'{round(_*100, 2)}%' for _ in prediction.Probability.values]
+            prediction['Probability'] = output
+            st.dataframe(prediction[0:3])
         else:
             st.markdown("**Oops**, something went wrong 😓 Please try again.")
             print(res.status_code, res.content)
