@@ -20,7 +20,7 @@ def preprocess_image(image):
 # funktion which loads the model
 # gave back a model variable
 
-def load_model(model_path = 'raw_data/model/model.h5'):
+def load_model(model_path = 'raw_data/model/model_b3.h5'):
     model = models.load_model(model_path)
     return model
 
@@ -29,7 +29,7 @@ def load_model(model_path = 'raw_data/model/model.h5'):
 #give back the prediction
 
 def predict_image(image):
-    model_path = 'raw_data/model/model.h5'
+    model_path = 'raw_data/model/model_b3.h5'
     preprocessed_img = preprocess_image(image)
     loaded_model = load_model(model_path)
     img = expand_dims(preprocessed_img, axis=0)
