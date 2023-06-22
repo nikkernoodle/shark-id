@@ -89,28 +89,24 @@ By leveraging data augmentation, we were able to introduce variations in the tra
 Results 📊
 The model achieved an overall accuracy of 76% on the test dataset. When examining the individual class performance, the F1-score varied across different shark species.
 
-             precision    recall  f1-score   support
-
-     basking       0.89      1.00      0.94        17
-        blue       0.85      0.73      0.79        15
-  hammerhead       1.00      1.00      1.00        19
-        mako       0.80      0.84      0.82        19
-  sand tiger       0.47      0.73      0.57        11
-       tiger       0.71      0.56      0.63        18
-       white       0.87      0.62      0.72        21
-    blacktip       0.62      0.87      0.72        15
-        bull       0.62      0.53      0.57        19
-       lemon       0.61      0.58      0.60        24
-       nurse       0.82      0.56      0.67        16
-    thresher       0.88      0.95      0.91        22
-       whale       0.93      0.82      0.87        17
-    whitetip       0.64      0.82      0.72        22
-
-    accuracy                           0.76       255
-   macro avg       0.77      0.76      0.75       255
-weighted avg       0.77      0.76      0.76       255
-
 We obtained impressive F1-scores for the Hammerhead, Basking, and Thresher classes, indicating precise and accurate classification. However, the Santiger, Bull, and Lemon classes had lower F1-scores, suggesting room for improvement in their classification accuracy. These results underscore the variations in the model's performance across different shark species, with certain classes achieving high accuracy (such as Basking and Hammerhead), while others present opportunities for enhancement (such as Santiger).
+
+F1 scores for all 14 classes ordered in ascending order:
+
+Sand tiger: 0.57
+Bull: 0.57
+Lemon: 0.60
+Tiger: 0.63
+Nurse: 0.67
+Whitetip: 0.72
+Blacktip: 0.72
+White: 0.72
+Blue: 0.79
+Mako: 0.82
+Whale: 0.87
+Thresher: 0.91
+Basking: 0.94
+Hammerhead: 1.00
 
 To improve the classification accuracy of the Santiger, Bull, and Lemon classes, we could consider increasing the training data. Additionally, fine-tuning the model's architecture or exploring attention mechanisms may help address the variations in performance across different shark species and further enhance overall accuracy.
 
