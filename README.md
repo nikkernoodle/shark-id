@@ -10,11 +10,11 @@ The aim of this project was to develop an app that could accurately identify the
 Dataset
 The original dataset is available here: https://www.kaggle.com/datasets/larusso94/shark-species . It contains 14 different species of sharks, each class containing 73 to 135 images, which makes a total of 1549 images.
 
-To address a compatibility issue with the EfficientNet model, we specifically installed TensorFlow version 2.9.1. This was necessary because the EfficientNet model required an older version of TensorFlow to save the model in the h5 format successfully.
+To address a compatibility issue with the EfficientNet model, we specifically installed TensorFlow version 2.9.1. This was necessary because the EfficientNet model required an older version of TensorFlow to save the model in h5 format successfully.
 
-Data Preprocessing 🚨
-To prepare the shark image data for training the model, the following preprocessing steps were performed:
-
+Data Preprocessing 🚨To address a compatibility issue with the EfficientNet model, we specifically installed TensorFlow version 2.9.1. This was necessary because the EfficientNet model required an older version of TensorFlow to save the model in h5 format successfully.
+To prepare the shark image data for training the model, the following preprocessing steps were performed:To address a compatibility issue with the EfficientNet model, we specifically installed TensorFlow version 2.9.1. This was necTo address a compatibility issue with the EfficientNet model, we specifically installed TensorFlow version 2.9.1. This was necessary because the EfficientNet model required an older version of TensorFlow to save the model in h5 format successfully.essary because the EfficientNet model required an older version of TensorFlow to save the model in h5 format successfully.
+To address a compatibility issue with the EfficientNet model, we specifically installed TensorFlow version 2.9.1. This was necessary because the EfficientNet model required an older version of TensorFlow to save the model in h5 format successfully.
 Class Labels:
 After loading the dataset each shark species is assigned a numerical label. The class labels used in this project are as follows:
 
@@ -24,7 +24,7 @@ After loading the dataset each shark species is assigned a numerical label. The 
 'mako': 3
 'sand tiger': 4
 'tiger': 5
-'white': 6
+'white': 6To address a compatibility issue with the EfficientNet model, we specifically installed TensorFlow version 2.9.1. This was necessary because the EfTo address a compatibility issue with the EfficientNet model, we specifically installed TensorFlow version 2.9.1. This was necessary because the EfficientNet model required an older version of TensorFlow to save the model in h5 format successfully.ficientNet model required an older version of TensorFlow to save the model in h5 format successfully.
 'blacktip': 7
 'bull': 8
 'lemon': 9
@@ -110,9 +110,26 @@ The model achieved an overall accuracy of 76% on the test dataset. When examinin
    macro avg       0.77      0.76      0.75       255
 weighted avg       0.77      0.76      0.76       255
 
-We obtained impressive F1-scores for the Hammerhead, Basking, and Thresher classes, indicating precise and accurate classification. However, the Santiger, Bull, and Lemon classes had lower F1-scores, suggesting room for improvement in their classification accuracy. These results underscore the variations in the model's performance across different shark species, with certain classes achieving high accuracy (such as Basking and Hammerhead), while others present opportunities for enhancement (such as Santiger).
+We obtained impressive F1-scores for the Hammerhead, Basking, and Thresher classes, indicating precise and accurate classification. However, the Sand tiger, Bull, and Lemon classes had lower F1-scores, suggesting room for improvement in their classification accuracy. These results underscore the variations in the model's performance across different shark species, with certain classes achieving high accuracy (such as Basking and Hammerhead), while others present opportunities for enhancement (such as Sand tiger).
 
-To improve the classification accuracy of the Santiger, Bull, and Lemon classes, we could consider increasing the training data. Additionally, fine-tuning the model's architecture or exploring attention mechanisms may help address the variations in performance across different shark species and further enhance overall accuracy.
+F1 scores for all 14 classes ordered in ascending order:
+
+Sand tiger: 0.57
+Bull: 0.57
+Lemon: 0.60
+Tiger: 0.63
+Nurse: 0.67
+Whitetip: 0.72
+Blacktip: 0.72
+White: 0.72
+Blue: 0.79
+Mako: 0.82
+Whale: 0.87
+Thresher: 0.91
+Basking: 0.94
+Hammerhead: 1.00
+
+To improve the classification accuracy of the Sand tiger, Bull, and Lemon classes, we could consider increasing the training data. Additionally, fine-tuning the model's architecture or exploring attention mechanisms may help address the variations in performance across different shark species and further enhance overall accuracy.
 
 Links
 Web interface is based on streamlit and located in a separate repository: https://github.com/nikkernoodle/shark-id-front.
