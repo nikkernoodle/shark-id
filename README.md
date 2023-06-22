@@ -12,9 +12,9 @@ The original dataset is available here: https://www.kaggle.com/datasets/larusso9
 
 To address a compatibility issue with the EfficientNet model, we specifically installed TensorFlow version 2.9.1. This was necessary because the EfficientNet model required an older version of TensorFlow to save the model in h5 format successfully.
 
-Data Preprocessing 🚨
-To prepare the shark image data for training the model, the following preprocessing steps were performed:
-
+Data Preprocessing 🚨To address a compatibility issue with the EfficientNet model, we specifically installed TensorFlow version 2.9.1. This was necessary because the EfficientNet model required an older version of TensorFlow to save the model in h5 format successfully.
+To prepare the shark image data for training the model, the following preprocessing steps were performed:To address a compatibility issue with the EfficientNet model, we specifically installed TensorFlow version 2.9.1. This was necTo address a compatibility issue with the EfficientNet model, we specifically installed TensorFlow version 2.9.1. This was necessary because the EfficientNet model required an older version of TensorFlow to save the model in h5 format successfully.essary because the EfficientNet model required an older version of TensorFlow to save the model in h5 format successfully.
+To address a compatibility issue with the EfficientNet model, we specifically installed TensorFlow version 2.9.1. This was necessary because the EfficientNet model required an older version of TensorFlow to save the model in h5 format successfully.
 Class Labels:
 After loading the dataset each shark species is assigned a numerical label. The class labels used in this project are as follows:
 
@@ -24,7 +24,7 @@ After loading the dataset each shark species is assigned a numerical label. The 
 'mako': 3
 'sand tiger': 4
 'tiger': 5
-'white': 6
+'white': 6To address a compatibility issue with the EfficientNet model, we specifically installed TensorFlow version 2.9.1. This was necessary because the EfTo address a compatibility issue with the EfficientNet model, we specifically installed TensorFlow version 2.9.1. This was necessary because the EfficientNet model required an older version of TensorFlow to save the model in h5 format successfully.ficientNet model required an older version of TensorFlow to save the model in h5 format successfully.
 'blacktip': 7
 'bull': 8
 'lemon': 9
@@ -133,4 +133,3 @@ To improve the classification accuracy of the Sand tiger, Bull, and Lemon classe
 
 Links
 Web interface is based on streamlit and located in a separate repository: https://github.com/nikkernoodle/shark-id-front.
-
