@@ -132,4 +132,4 @@ Hammerhead: 1.00
 To improve the classification accuracy of the Sand tiger, Bull, and Lemon classes, we could consider increasing the training data. Additionally, fine-tuning the model's architecture or exploring attention mechanisms may help address the variations in performance across different shark species and further enhance overall accuracy.
 
 Links
-Web interface is based on streamlit and located in a separate repository: https://github.com/nikkernoodle/shark-id-front.
+Web interface is based on streamlit and located in a separate repository: https://github.com/nikkinudelman/shark-id-front.
